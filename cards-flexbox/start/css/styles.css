@@ -1,0 +1,80 @@
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    background-color: #f2f2f2;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+img {
+    max-width: 100%;
+    display: block; /* to remove space between image and text below*/
+}
+
+h2 {
+    text-align: center;
+    font-size: 1.6rem;
+}
+
+h3{
+    margin: 0;
+    font-weight: 700;
+    font-family: 'Libre Baskerville', serif;
+}
+
+.button {
+    background-color: #008fd1;  
+    text-decoration: none;
+    padding: 0.6rem;
+    /* margin-top not going to work. anchors are inline items */
+    display: inline-block;
+    margin-top: 1rem;
+    color: white;
+}
+
+.main-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.entry {
+    margin-bottom: 2rem;
+    background-color: #ffffff; /* If I put the background color here, all elements will share the same height*/
+}
+
+@media (min-width: 480px) {
+    .entry {
+        flex: 0 0 calc(50% - 1rem);
+    }
+}
+
+@media (min-width: 768px) {
+    .entry {
+        flex: 0 0 calc(33.3% - 1rem);
+    }
+}
+
+.entry .content {
+    text-transform: uppercase;
+    padding: 1rem;
+    text-align: center;
+}
+
+.content h3 {
+    font-size: .9rem;
+    line-height: 1.5; /* separation between elements lines in the same element*/
+}
+
+.content span {
+    color: #db008d;
+}
