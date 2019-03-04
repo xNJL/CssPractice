@@ -19,6 +19,35 @@ h3 {
 img {
     max-width: 100%;
 }
+
+/** Header **/
+.header {
+    position: relative;
+}
+.hero {
+    background-image: url(../img/hero.jpg);
+    background-position: center center;
+    background-size: cover;
+    height: 100vh; /** relative a grandezza finestra browser **/
+    background-attachment: fixed; /** do not scroll **/
+}
+.navbar {
+    background-color: #008fd1;
+    padding: 1rem 0;
+    position: absolute;
+    top: 1rem;
+    width: 100%;
+}
+.header-container {
+    display: flex;
+    flex-direction: column;
+}
+@media (min-width: 768px){
+    .header-container{
+        flex-direction: row;
+        justify-content: space-between;      
+    }
+}
 .content {
     background-color: white;
     margin-bottom: 1rem;
